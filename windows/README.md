@@ -243,3 +243,48 @@ Paramètres → Heure et langue → vérifier que "Régler l'heure automatiqueme
 
 **Solution courante navigateur** :
 Vider le cache et les données de navigation, notamment les certificats mis en cache.
+
+---
+
+## Panne 15 — Impression réseau, diagnostic détaillé
+
+### Étape 1 — Vérifier la connectivité réseau vers l'imprimante
+
+ping <adresse-ip-imprimante>
+
+Si aucune réponse : problème réseau (câble, Wi-Fi, ou imprimante éteinte) avant même de penser au pilote.
+
+### Étape 2 — Vérifier que le service d'impression fonctionne
+
+services.msc → Spouleur d'impression → doit être "En cours d'exécution"
+
+
+### Étape 3 — Vérifier la file d'attente bloquée
+Une impression bloquée en tête de file empêche souvent tous les documents suivants de s'imprimer, même sans rapport avec le problème initial.
+
+**Vider complètement la file (technique) :**
+
+net stop spooler
+del /Q /F %systemroot%\System32\spool\PRINTERS*.*
+net start spooler
+
+
+### Étape 4 — Vérifier le pilote correspond bien au modèle exact
+Un pilote générique ou pour un modèle proche mais différent peut sembler fonctionner partiellement (page de test OK) mais échouer sur de vrais documents complexes.
+
+### Étape 5 — Cas spécifique : imprimante visible mais "hors ligne"
+
+Panneau de configuration → Périphériques et imprimantes → clic droit sur l'imprimante → "Utiliser l'imprimante en ligne"
+
+Windows marque parfois une imprimante "hors ligne" après une brève coupure réseau, sans se remettre à jour automatiquement.
+
+### Étape 6 — Scanner réseau qui ne fonctionne pas alors que l'impression fonctionne
+Diagnostic séparé nécessaire : le scan utilise souvent un protocole différent (SMB pour l'envoi vers un dossier partagé, ou une app dédiée).
+
+**Vérifier le partage réseau de destination** :
+
+net share
+
+Confirme que le dossier partagé cible existe bien et est accessible en écriture pour le compte utilisé par le scanner.
+
+**Cas fréquent** : le mot de passe du compte utilisé par le scanner pour accéder au dossier partagé a expiré ou changé, sans que personne n'ait mis à jour la configuration du scanner — l'impression continue de fonctionner (autre protocole) pendant que le scan échoue silencieusement.
