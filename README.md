@@ -36,6 +36,7 @@ Un bon technicien ne connaît pas toutes les solutions par cœur. Il sait diagno
 | 📝 **[Post-mortems](post-mortems/)** | Des cas réels racontés en entier, du symptôme à la cause profonde |
 | ✅ **[Checklists rapides](checklists/README.md)** | À consulter en 30 secondes en plein incident, pas à lire en entier |
 | 🎯 **[Bonnes pratiques](bonnes-pratiques.md)** | Communication, méthode, sécurité, gestion des priorités, travail en équipe |
+| 📖 **[Glossaire](glossaire.md)** | Tous les sigles utilisés dans ce guide, expliqués en une phrase |
 
 ---
 
