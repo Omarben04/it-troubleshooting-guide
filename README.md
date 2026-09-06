@@ -1,38 +1,49 @@
-# IT Troubleshooting Guide
+# 🛠️ IT Troubleshooting Guide
 
-Guide complet de résolution des problèmes IT courants, organisé par système d'exploitation et par domaine — construit à partir de vraies pannes rencontrées ou observées en contexte professionnel, avec la méthode de diagnostic étape par étape, pas juste la solution finale.
+![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Security](https://img.shields.io/badge/Sécurité-D32F2F?style=for-the-badge&logo=shield&logoColor=white)
 
-## Pourquoi ce projet
+Un peu d'histoire derrière ce dépôt : je le tiens à jour au fil de ce que je rencontre vraiment, pas comme une liste théorique. Chaque panne ici, je l'ai soit vécue, soit vue racontée par quelqu'un du métier, avec la vraie méthode pour s'en sortir.
 
-Un bon technicien IT ne se contente pas de connaître des solutions toutes faites — il sait diagnostiquer méthodiquement, en isolant les variables une par une, et sait réagir avec la bonne proportion face à un incident de sécurité. Ce guide documente cette démarche pour les pannes les plus fréquentes, et sert aussi de référence personnelle à consulter en cas de vrai besoin.
+## Pourquoi ce projet existe
 
-## Sommaire
+Un bon technicien ne connaît pas toutes les solutions par cœur. Il sait diagnostiquer méthodiquement, isoler une variable à la fois, et surtout garder son calme et réagir de façon proportionnée face à un vrai incident de sécurité. C'est cette démarche que j'essaie de documenter ici — pas juste "voici la commande", mais pourquoi et dans quel ordre.
 
-### Par système d'exploitation
-- [Windows](windows/README.md) — réseau, performance, BSOD, Windows Update, imprimante/scanner, disque, profil utilisateur, VPN, Active Directory, pilotes, certificats
-- [Linux](linux/README.md) — serveurs, services, réseau, pare-feu (ufw/firewalld), permissions/SELinux, SSH, fail2ban, Docker, paquets (apt/dnf), VPN, sauvegardes — avec distinctions Debian/Ubuntu vs RedHat/CentOS/Oracle Linux
-- [macOS](macos/README.md) — applications, réseau Wi-Fi, disque, démarrage, VPN, Time Machine
+---
 
-### Par domaine
-- [Mobile & MDM](mobile-mdm/README.md) — enrôlement, appareil perdu/volé, mot de passe oublié, BYOD, applications, confidentialité
-- [Sécurité](securite/README.md) — phishing, ransomware, poste compromis, brute-force, MITM, DDoS, zero-day, vishing, sécurité mobile (app malveillante, faux Wi-Fi, smishing)
-- [Situations réelles](scenarios-reels.md) — dilemmes concrets avec plusieurs options possibles, pas juste une solution technique isolée
+## 📁 Par système d'exploitation
 
-## Méthode générale de diagnostic
+| | Domaine couvert |
+|---|---|
+| 🪟 **[Windows](windows/README.md)** | Réseau, BSOD, Windows Update, imprimante/scanner, disque, profil utilisateur, VPN, Active Directory, pilotes, certificats |
+| 🐧 **[Linux](linux/README.md)** | Serveurs, services, réseau, pare-feu (ufw/firewalld), SELinux, SSH, fail2ban, Docker, paquets — avec les vraies différences entre Debian/Ubuntu et RedHat/CentOS |
+| 🍎 **[macOS](macos/README.md)** | Applications, Wi-Fi, disque, démarrage, VPN, Time Machine |
 
-Face à n'importe quel incident, la démarche reste la même, quel que soit l'OS :
+## 📱 Par domaine
 
-1. **Isoler le périmètre** : le problème touche-t-il un seul utilisateur, un groupe, ou tout le monde ?
-2. **Vérifier ce qui a changé récemment** : mise à jour, nouvelle installation, changement réseau
-3. **Reproduire si possible** : le problème est-il systématique ou intermittent ?
-4. **Consulter les logs avant de toucher à quoi que ce soit**
-5. **Isoler une variable à la fois** : ne jamais changer plusieurs choses en même temps
+| | Domaine couvert |
+|---|---|
+| 📲 **[Mobile & MDM](mobile-mdm/README.md)** | Enrôlement, appareil perdu ou volé, mot de passe oublié, BYOD, confidentialité |
+| 🔒 **[Sécurité](securite/README.md)** | Phishing, ransomware, poste compromis, brute-force, DDoS, zero-day, vishing, et toute la partie mobile (app malveillante, faux Wi-Fi, smishing) |
+| 💬 **[Situations vécues](scenarios-reels.md)** | Des vrais dilemmes, racontés avec plusieurs options possibles — pas une seule réponse toute faite |
 
-## Principe général face à un incident de sécurité
+---
 
-1. **Contenir** — empêcher la propagation avant tout
-2. **Préserver les preuves** — ne rien effacer avant d'avoir compris
-3. **Analyser** — comprendre l'étendue réelle, pas supposer
-4. **Communiquer** — informer les bonnes personnes au bon moment
-5. **Corriger** — nettoyer une fois l'analyse terminée
-6. **Tirer les leçons** — documenter pour éviter la récidive
+## 🧭 Ma méthode de diagnostic, avant tout
+
+Peu importe l'OS, je me pose toujours les mêmes questions dans cet ordre :
+
+1. Est-ce que ça touche une seule personne, un groupe, ou tout le monde ?
+2. Qu'est-ce qui a changé récemment ? Une mise à jour, une install, un changement réseau ?
+3. Est-ce que ça se reproduit systématiquement, ou c'est intermittent ?
+4. Je regarde les logs avant de toucher à quoi que ce soit
+5. Je change une seule chose à la fois — jamais deux en même temps
+
+## 🚨 Face à un incident de sécurité
+
+Ma logique reste toujours la même :
+
+**Contenir** d'abord → **préserver** ce qui pourrait servir de preuve → **analyser** vraiment, sans supposer → **prévenir** les bonnes personnes, ni trop tôt ni trop tard → **corriger** une fois qu'on a compris → et **en tirer une leçon**, pour que ça ne se reproduise pas pareil.
