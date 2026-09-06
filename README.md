@@ -9,6 +9,8 @@
 
 Un peu d'histoire derrière ce dépôt : je le tiens à jour au fil de ce que je rencontre vraiment, pas comme une liste théorique. Chaque panne ici, je l'ai soit vécue, soit vue racontée par quelqu'un du métier, avec la vraie méthode pour s'en sortir.
 
+Ce guide complète mon [projet d'infrastructure cloud complet](https://github.com/Omarben04/pradeo-devops-demo), où j'ai justement rencontré plusieurs des situations racontées ici (l'échec ARM64 sur trois MDM différents, le filtre fail2ban trop permissif) — les deux projets avancent ensemble, l'un plutôt orienté construction, celui-ci plutôt orienté diagnostic et réaction.
+
 ## Pourquoi ce projet existe
 
 Un bon technicien ne connaît pas toutes les solutions par cœur. Il sait diagnostiquer méthodiquement, isoler une variable à la fois, et surtout garder son calme et réagir de façon proportionnée face à un vrai incident de sécurité. C'est cette démarche que j'essaie de documenter ici — pas juste "voici la commande", mais pourquoi et dans quel ordre.
@@ -32,6 +34,8 @@ Un bon technicien ne connaît pas toutes les solutions par cœur. Il sait diagno
 | 🌐 **[Réseau approfondi](reseau/README.md)** | DNS, DHCP, VLAN, sous-réseaux/masques, NAT, pare-feu en couches, un vrai cas de dépannage complexe |
 | 💬 **[Situations vécues](scenarios-reels.md)** | Des vrais dilemmes, racontés avec plusieurs options possibles — pas une seule réponse toute faite |
 | 📝 **[Post-mortems](post-mortems/)** | Des cas réels racontés en entier, du symptôme à la cause profonde |
+| ✅ **[Checklists rapides](checklists/README.md)** | À consulter en 30 secondes en plein incident, pas à lire en entier |
+| 🎯 **[Bonnes pratiques](bonnes-pratiques.md)** | Communication, méthode, sécurité, gestion des priorités, travail en équipe |
 
 ---
 
